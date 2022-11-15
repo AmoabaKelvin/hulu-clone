@@ -4,6 +4,9 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
+  images: {
+    domains: ['links.papareact.com', 'image.tmdb.org'],
+  },
 
   reactStrictMode: true,
   swcMinify: true,
