@@ -26,9 +26,10 @@ export default HomePage;
 
 export const getServerSideProps = async (context: any) => {
   const genre = context.query.genre;
-  console.log(genre);
   const request = await fetch(
-    `https://api.themoviedb.org/3${requests.find((r) => r.link === genre)?.url}`
+    `https://api.themoviedb.org/3${
+      requests.find((r) => r.link === genre)?.url || requests[0].url
+    }`
   ).then((res) => res.json());
 
   return {
